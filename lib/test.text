@@ -1,0 +1,97 @@
+
+
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return const MaterialApp(
+//       home: MyAppTow(),
+//     );
+//   }
+// }
+
+// class MyAppTow extends StatelessWidget {
+//   const MyAppTow({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: MultiProvider(
+//         providers: [
+//           ChangeNotifierProvider(create: (context) {
+//             return Model();
+//           }),
+//           ChangeNotifierProvider(create: (context) {
+//             return ModelTow();
+//           }),
+//         ],
+//         child: const App(),
+//       ),
+//     );
+//   }
+// }
+
+// class App extends StatelessWidget {
+//   const App({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Column(
+//         children: [
+//           Consumer<Model>(
+//             builder: (context, model, child) => Column(
+//               children: [
+//                 Text(model.name),
+//                 ElevatedButton(
+//                     onPressed: () {
+//                       model.changeName();
+//                     },
+//                     child: Text(model.name))
+//               ],
+//             ),
+//           ),
+//           Consumer<ModelTow>(
+//             builder: (context, model, child) => Column(
+//               children: [
+//                 Text(model.name),
+//                 ElevatedButton(
+//                     onPressed: () {
+//                       model.changeName();
+//                     },
+//                     child: Text(model.name))
+//               ],
+//             ),
+//           )
+//         ],
+//       ),
+//     );
+//   }
+// }
+
+// abstract class ModelOne extends ChangeNotifier {
+//   changeName();
+// }
+
+// class Model extends ModelOne {
+//   String name = "mohammed";
+//   @override
+//   changeName() {
+//     name = name == "ahmed" ? "mohammed" : "ahmed";
+//     notifyListeners();
+//   }
+// }
+
+// abstract class ModelOneO extends ChangeNotifier {
+//   changeName();
+// }
+
+// class ModelTow extends ModelOneO {
+//   String name = "omar";
+//   @override
+//   changeName() {
+
+//     notifyListeners();
+//   }
+// }
